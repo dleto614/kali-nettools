@@ -36,8 +36,14 @@ exit_error() {
     exit 1
 }
 
+if [[ $# -eq 0 ]]
+then
+    exit_error
+fi
+
 # Manual argument parsing
-while [[ $# -gt 0 ]]; do
+while [[ $# -gt 0 ]]
+do
     case "$1" in
         -c)
             CERT="$2"
