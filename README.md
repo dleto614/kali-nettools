@@ -44,7 +44,11 @@ Everything but folder are required parameters. This will generate all the certs 
 Example usage:
 
 ```bash
-./scripts/generate-certs.sh -c US -s OH -l Mars -o "Ohio State University" -u "Hummajn Resources" -n osu.edu/ -f ohio-uni-test
+./scripts/generate-certs.sh -c US -s OH -l Mars \
+                                                -o "Ohio State University" \
+                                                -u "Hummajn Resources" \
+                                                -n osu.edu/ \
+                                                -f ohio-uni-test
 ```
 
 ---
@@ -98,7 +102,10 @@ sudo docker exec -it "$CONTAINER_ID" ./eaphammer/eaphammer \
 You can combine the various actions together. Such as -c aka the cert flag:
 
 ```bash
-./scripts/run-commands.sh -e Broccoli29 -C 1 -i wlan1 -a wpa-eap --creds -c certs/generated/ohio-uni-test/cert.pem 
+./scripts/run-commands.sh -e Broccoli29 \
+                        -C 1 -i wlan1 \
+                        -a wpa-eap \
+                        --creds -c certs/generated/ohio-uni-test/cert.pem 
 ```
 
 This would import the cert specified before starting the AP.
@@ -136,9 +143,13 @@ I built this with the possibility of adding more stuff to it since I have a bit 
 More information on WPA-EAP specifically credential stealing to gain entrance via an evil twin:
 
 https://shuciran.github.io/posts/Attacking-WPA-Enterprise/
+
 https://github.com/s0lst1c3/s0lst1c3.github.io/blob/master/workshops/advanced-wireless-attacks/ii-attacking-and-gaining-entry-to-wpa2-eap-wireless-networks.md
+
 https://kalilinuxtutorials.com/eaphammer-targeted-evil-twin-attacks-against-wpa2-enterprise-networks/
+
 https://wifi-fu.com/2025/02/07/a-look-at-wpa2-enterprise/
+
 https://thr0cut.github.io/research/wifi-penetration-testing/
 
 The original tool is hostapd-wpe which I think eaphammer might use a bit under the hood, but can't confirm 100%.
@@ -146,13 +157,17 @@ The original tool is hostapd-wpe which I think eaphammer might use a bit under t
 References to that tool:
 
 https://www.kali.org/tools/hostapd-wpe/
+
 https://github.com/OpenSecurityResearch/hostapd-wpe
+
 https://warroom.rsmus.com/weaponizing-hostapd-wpe/
 
 For more informatin on EAP, here are a few references:
 
 https://www.techtarget.com/searchsecurity/definition/Extensible-Authentication-Protocol-EAP
+
 https://thisvsthat.io/wpa-eap-vs-wpa2-eap
+
 https://community.fortinet.com/t5/FortiAP/Technical-Tip-Understanding-WPA2-Enterprise-EAP-PEAP-packet/ta-p/366542
 
 There is a lot on this topic and I really don't want to write about this in my README since it would take way too long.
