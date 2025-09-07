@@ -45,10 +45,10 @@ Example usage:
 
 ```bash
 ./scripts/generate-certs.sh -c US -s OH -l Mars \
-                                                -o "Ohio State University" \
-                                                -u "Hummajn Resources" \
-                                                -n osu.edu/ \
-                                                -f ohio-uni-test
+                                -o "Ohio State University" \
+                                -u "Hummajn Resources" \
+                                -n osu.edu/ \
+                                -f ohio-uni-test
 ```
 
 ---
